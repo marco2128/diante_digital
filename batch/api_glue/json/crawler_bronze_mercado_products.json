@@ -1,0 +1,22 @@
+{
+  "Name": "crawler_bronze_mercadoe",
+  "Role": "arn:aws:iam::123456789012:role/AWSGlueServiceRoleDefault",
+  "DatabaseName": "bronze_mercado_db",
+  "Targets": {
+    "S3Targets": [
+      {
+        "Path": "s3://bucket-mercado/bronze/mercadoe/products/"
+      }
+    ]
+  },
+  "TablePrefix": "bronze_products",
+  "SchemaChangePolicy": {
+    "UpdateBehavior": "UPDATE_IN_DATABASE",
+    "DeleteBehavior": "DEPRECATE_IN_DATABASE"
+  },
+  "RecrawlPolicy": {
+    "RecrawlBehavior": "CRAWL_EVERY_RUN"
+  },
+  "Schedule": "cron(0 2 * * ? *)",
+  "CrawlerSecurityConfiguration": ""
+}

@@ -1,0 +1,49 @@
+# Configuração CDC para tabela estoque via AWS DMS
+pipeline:
+  nome: estoque_cdc_dms
+  tipo: delta
+  origem:
+    banco: mysql
+    tabela: estoque
+    chave_primaria: id
+    campos:
+      - id
+      - id_produto
+      - id_fazenda
+      - quantidade
+      - data_colheita
+  monitoramento:
+    campo_alteracao:
+      - quantidade
+      - data_colheita
+    modo: cdc
+    fonte: binlog
+
+raw:
+  destino_s3: s3://bucket-agrotrade/raw/estoque/
+  formato: json
+  estrutura:
+    full_load: true
+    cdc_dir: cdc/
+    schema:
+      tipo: semi-estruturado
+
+bronze:
+  destino_s3: s3://bucket-agrotrade/bronze/estoque/
+  formato: parquet
+  particionamento:
+    - ano
+    - mes
+    - dia
+  tratamento:
+    valida_campos:
+      quantidade: decimal(10,2)
+      data_colheita: date
+    merge_por: id
+    sobrescrever_dia: true
+
+crawler:
+  habilitar: true
+  nome: crawler_bronze_estoque
+  catalogo: bronze_estoque_db
+  atualizacao: diaria

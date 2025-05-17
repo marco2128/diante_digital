@@ -1,0 +1,7 @@
+captura e replica apenas as mudanças (INSERT, UPDATE, DELETE) que ocorrem após o full-load, em tempo quase real.
+
+{"metadata": {"operation": "update", "timestamp": "2025-05-17 13:28:32"}, "data": {"id": 1, "preco_estimado": "25.26", "unidade_medida": "litro"}}
+{"metadata": {"operation": "update", "timestamp": "2025-05-17 13:28:32"}, "data": {"id": 2, "preco_estimado": "25.3", "unidade_medida": "litro"}}
+{"metadata": {"operation": "update", "timestamp": "2025-05-17 13:28:32"}, "data": {"id": 3, "preco_estimado": "9.02", "unidade_medida": "ton"}}
+{"metadata": {"operation": "update", "timestamp": "2025-05-17 13:28:32"}, "data": {"id": 4, "preco_estimado": "8.27", "unidade_medida": "litro"}}
+{"metadata": {"operation": "update", "timestamp": "2025-05-17 13:28:32"}, "data": {"id": 5, "preco_estimado": "15.31", "unidade_medida": "litro"}}

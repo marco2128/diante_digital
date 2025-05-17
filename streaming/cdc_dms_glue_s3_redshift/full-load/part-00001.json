@@ -1,0 +1,7 @@
+carga inicial completa de todos os dados existentes em uma tabela de origem (como MySQL, PostgreSQL, etc.) 
+para o destino (como S3, Redshift, etc.).
+{"id": 1, "nome_produto": "Caf\u00e9", "tipo_cultura": "Bebida", "preco_estimado": "14.57", "unidade_medida": "litro", "criado_em": "2025-04-17 13:28:32"}
+{"id": 2, "nome_produto": "Algod\u00e3o", "tipo_cultura": "Fibra", "preco_estimado": "18.73", "unidade_medida": "", "criado_em": "2025-04-17 13:28:32"}
+{"id": 3, "nome_produto": "Feij\u00e3o", "tipo_cultura": "Leguminosa", "preco_estimado": "4.26", "unidade_medida": "kg", "criado_em": "2025-04-17 13:28:32"}
+{"id": 4, "nome_produto": "Soja", "tipo_cultura": "Gr\u00e3o", "preco_estimado": "2.3", "unidade_medida": "kg", "criado_em": "2025-04-17 13:28:32"}
+{"id": 5, "nome_produto": "Feij\u00e3o", "tipo_cultura": "Leguminosa", "preco_estimado": "11.41", "unidade_medida": "litro", "criado_em": "2025-04-17 13:28:32"}
