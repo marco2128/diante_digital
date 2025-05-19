@@ -1,0 +1,6 @@
+apiVersion: v2
+name: observ-app
+description: Um chart Helm simples para o app de observabilidade
+type: application
+version: 0.1.0
+appVersion: "1.0"

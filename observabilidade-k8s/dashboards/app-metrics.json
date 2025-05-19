@@ -1,0 +1,22 @@
+{
+    "title": "App Metrics Dashboard",
+    "panels": [
+        {
+            "type": "timeseries",
+            "title": "CPU Usage (observ-app)",
+            "targets": [
+                {
+                    "expr": "rate(container_cpu_usage_seconds_total{pod=~"observ-app.*"}[2m])",
+                    "legendFormat": "CPU",
+                    "interval": "",
+                    "refId": "A"
+                }
+            ],
+            "datasource": "Prometheus",
+            "id": 1
+        }
+    ],
+    "schemaVersion": 30,
+    "version": 1,
+    "editable": true
+}
