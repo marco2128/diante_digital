@@ -1,0 +1,23 @@
+name: redshift_lab
+version: '1.0'
+config-version: 2
+
+profile: redshift_lab
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  redshift_lab:
+    +schema: public
+    +materialized: view  # você pode trocar por 'table' ou 'incremental' se preferir
