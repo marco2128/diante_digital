@@ -1,23 +1,30 @@
-# Projeto Diante Digital
+# Projeto DBT — Diante Digital
 
-Este repositório contém a estrutura completa de um projeto de dados com suporte a cargas batch, streaming e modelagem de dados com dbt no Redshift.
+Este repositório implementa uma arquitetura de transformação de dados utilizando **dbt (Data Build Tool)** em três camadas:
 
-## 📁 Estrutura do Projeto
+## 🧱 Camadas
 
+- **Bronze (`staging`)**: Leitura dos dados brutos da camada `raw` e padronização de nomes.
+- **Silver (`intermediate`)**: Aplicação de regras de negócio e tratamento de valores.
+- **Gold (`marts`)**: Modelos finais prontos para análise.
 
+---
 
-## ⚙️ Tecnologias Utilizadas
+## 🗃️ Fonte de dados
 
-- **AWS Glue**
-- **AWS Lambda**
-- **Amazon Redshift**
-- **Amazon S3**
-- **DBT**
-- **Kubernetes (observabilidade)**
+- **Tabela raw:** `raw_data.dados_global`
+- Schema de origem: `raw_data`
+- Campos: `tipo`, `cenario`, `trimestre`, `ano`, `preco`
 
-## 🚀 Execução
+---
 
-1. Configure as variáveis de ambiente e credenciais AWS.
-2. Execute os jobs batch com Glue ou streaming com Lambda.
-3. Utilize o diretório `dbt/redshift_lab` para modelagem no Redshift.
+## 🏗️ Organização dos modelos
 
+```bash
+models/
+├── staging/
+│   └── stg_dados_global.sql      # Camada bronze
+├── intermediate/
+│   └── silver_dados_global.sql   # Camada silver
+└── marts/
+    └── gold_dados_global.sql     # Camada gold
