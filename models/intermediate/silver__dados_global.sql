@@ -1,12 +1,11 @@
--- models/silver__dados_global.sql
-with bronze as (
-    select * from {{ ref('bronze__dados_global') }}
+-- models/gold__media_preco_por_ano.sql
+with silver_data_cte as (
+    select * from {{ ref('silver__dados_global') }}
 )
 
 select
-    cast(tipo as string) as tipo,
-    cast(cenario as string) as cenario,
-    cast(trimestre as string) as trimestre,
-    cast(ano as int) as ano,
-    cast(preco as float64) as preco
-from bronze
+    ano,
+    round(avg(preco), 2) as media_preco
+from silver_data
+group by ano
+order by ano

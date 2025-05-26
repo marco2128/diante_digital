@@ -1,4 +1,6 @@
-with raw as (
+-- models/staging/bronze__dados_global.sql
+
+with raw_data_cte as (
     select * from {{ source('raw_data', 'dados_global') }}
 )
 
@@ -8,5 +10,5 @@ select
     trimestre,
     ano,
     preco
-from raw
+from raw_data_cte
 where ano is not null and preco is not null
