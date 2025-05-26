@@ -1,13 +1,42 @@
-redshift_lab:
+diante_digital:
   target: dev
   outputs:
     dev:
       type: redshift
       host: redshift-serverless-workgroup-c35xsydpp79xnt.190440599924.us-east-2.redshift-serverless.amazonaws.com
+      user: marco001
+      password: Ma40lg40#
       port: 5439
-      user: admin
-      password: "i{Qg1o9x~UdDHSKvFW.S#xY<`~3}->1*e"
       dbname: dev
-      schema: public
-      threads: 1
-      sslmode: prefer
+      schema: dbt_marco2128
+      threads: 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      diante_digital:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      host: redshift-serverless-workgroup-c35xsydpp79xnt.190440599924.us-east-2.redshift-serverless.amazonaws.com
+      user: marco001
+      password: Ma40lg40#
+      port: 5439
+      dbname: dev
+      schema: dbt_marco2128
+      threads: 6
+

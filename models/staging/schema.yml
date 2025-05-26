@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: Fonte de dados bruta
+    schema: raw_data
+    tables:
+      - name: dados_global
+        description: Tabela de dados globais brutos
