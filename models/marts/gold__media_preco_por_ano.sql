@@ -1,4 +1,5 @@
 -- models/gold__media_preco_por_ano.sql
+
 with silver_data_cte as (
     select * from {{ ref('silver__dados_global') }}
 )
@@ -6,7 +7,6 @@ with silver_data_cte as (
 select
     ano,
     round(avg(preco), 2) as media_preco
-from silver_data
+from silver_data_cte
 group by ano
 order by ano
-
