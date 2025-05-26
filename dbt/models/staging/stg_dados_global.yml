@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_dados_global
+    description: "Tabela bruta com dados globais de preços de açúcar"
+    columns:
+      - name: tipo
+        description: "Tipo do açúcar"
+      - name: cenario
+        description: "Cenário de projeção"
+      - name: trimestre
+        description: "Trimestre do dado"
+      - name: ano
+        description: "Ano de referência"
+      - name: preco
+        description: "Preço do açúcar no período"
+

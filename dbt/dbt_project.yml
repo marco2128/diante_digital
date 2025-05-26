@@ -1,23 +1,25 @@
-name: redshift_lab
+name: diante_digital
 version: '1.0'
 config-version: 2
 
-profile: redshift_lab
+profile: diante_digital
 
 model-paths: ["models"]
-seed-paths: ["seeds"]
-analysis-paths: ["analyses"]
+analysis-paths: ["analysis"]
 test-paths: ["tests"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
-docs-paths: ["docs"]
 
 target-path: "target"
-clean-targets:
-  - "target"
-  - "dbt_modules"
+clean-targets: ["target", "dbt_modules", "dbt_packages"]
 
 models:
-  redshift_lab:
-    +schema: public
-    +materialized: view  # você pode trocar por 'table' ou 'incremental' se preferir
+  diante_digital:
+    +materialized: view  # padrão global
+    staging:
+      +schema: bronze
+    intermediate:
+      +schema: silver
+    marts:
+      +schema: gold

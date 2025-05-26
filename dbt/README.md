@@ -1,21 +1,30 @@
-# Projeto dbt - Redshift Serverless
+# Projeto DBT — Diante Digital
 
-Este projeto utiliza o [dbt (Data Build Tool)](https://www.getdbt.com/) com o Amazon Redshift Serverless.
+Este repositório implementa uma arquitetura de transformação de dados utilizando **dbt (Data Build Tool)** em três camadas:
 
-## Estrutura
+## 🧱 Camadas
 
-- `models/`: modelos SQL com materializações (`view`, `table`, etc)
-  - `staging/`: camadas de staging
-  - `marts/`: tabelas finais de negócio (fatos e dimensões)
-- `macros/`: macros customizadas
-- `snapshots/`: snapshots de controle de alterações
-- `tests/`: testes customizados
-- `seeds/`: arquivos `.csv` de carga inicial
+- **Bronze (`staging`)**: Leitura dos dados brutos da camada `raw` e padronização de nomes.
+- **Silver (`intermediate`)**: Aplicação de regras de negócio e tratamento de valores.
+- **Gold (`marts`)**: Modelos finais prontos para análise.
 
-## Comandos úteis
+---
+
+## 🗃️ Fonte de dados
+
+- **Tabela raw:** `raw_data.dados_global`
+- Schema de origem: `raw_data`
+- Campos: `tipo`, `cenario`, `trimestre`, `ano`, `preco`
+
+---
+
+## 🏗️ Organização dos modelos
 
 ```bash
-dbt run                 # Executa os modelos
-dbt test                # Executa os testes definidos
-dbt docs generate       # Gera a documentação
-dbt docs serve          # Inicia a visualização da doc
+models/
+├── staging/
+│   └── stg_dados_global.sql      # Camada bronze
+├── intermediate/
+│   └── silver_dados_global.sql   # Camada silver
+└── marts/
+    └── gold_dados_global.sql     # Camada gold
