@@ -1,4 +1,3 @@
--- models/bronze__dados_global.sql
 with raw as (
     select * from {{ source('raw_data', 'dados_global') }}
 )

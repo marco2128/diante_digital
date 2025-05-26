@@ -2,8 +2,22 @@ version: 2
 
 sources:
   - name: raw_data
-    description: Fonte de dados bruta
-    schema: raw_data
+    schema: raw_datac
     tables:
       - name: dados_global
         description: Tabela de dados globais brutos
+
+models:
+  - name: bronze__dados_global
+    description: Modelagem inicial de dados globais
+    columns:
+      - name: tipo
+        description: Tipo de produto
+      - name: cenario
+        description: Cenário econômico
+      - name: trimestre
+        description: Trimestre de referência
+      - name: ano
+        description: Ano
+      - name: preco
+        description: Preço
