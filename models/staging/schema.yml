@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw_data
-    schema: raw_datac
+    schema: raw_data
     tables:
       - name: dados_global
         description: Tabela de dados globais brutos
