@@ -1,3 +1,69 @@
-# Ignorar ambientes virtuais
-dbt/dbt_venv/
-dbt/~/
+5337a1e2-93c5-4d77-bded-e1d716cc7ade
+
+5337a1e2-93c5-4d77-bded-e1d716cc7ade
+
+session#09ce2b0613cf45fb8f1fe04342971456#1748372310|PC#09ce2b0613cf45fb8f1fe04342971456.34_0#1811615250
+
+lab-databricks-pyspark
+
+
+databricks-crossaccount-role
+
+worksapce lab-databricks-pyspark
+=================
+✅ Como evitar custos desnecessários:
+Desative auto-start de clusters na workspace.
+
+Evite NAT Gateways, se possível (use NAT Instance ou configure corretamente).
+
+Exclua recursos manualmente ou remova o stack CloudFormation após testes.
+
+Use Free Tier de EC2, S3, etc., quando possível.
+====================================================================
+
+
+
+
+Me avise assim que finalizar que eu te oriento:
+
+🔸 Como acessar o workspace
+🔸 Criar cluster
+🔸 Rodar spark.range(10).show()
+🔸 Acessar S3 via PySpark
+
+Você está a um passo do seu laboratório Databricks funcionar! 
+
+	
+AmazonEC2FullAccess
+AmazonS3FullAccess
+AWSGlueConsoleFullAccess
+CloudWatchLogsFullAccess
+DatabricksAccessPolicy
+IAMFullAccess
+
+===========
+✅ Conclusão:
+Você não precisa recriar a role em Ohio.
+O que pode estar causando o erro é:
+A role não tem permissões suficientes
+O External ID está incorreto no trust relationship
+O ARN da role no CloudFrmation não bate com o nome atual
+Erro de permissão no S3 (Ohio) mesmo que a role esteja correta
+================
+revisar seu template CloudFormation + trust policy pra garantir que está tudo certo.
+Quer que eu valide esse fluxo contigo?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

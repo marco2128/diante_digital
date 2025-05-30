@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw_data
-    schema: raw_data
+    schema: raw_data     # ✅ este é o schema onde está a fonte em Redshift
     tables:
       - name: dados_global
         description: Tabela de dados globais brutos
@@ -12,12 +12,7 @@ models:
     description: Modelagem inicial de dados globais
     columns:
       - name: tipo
-        description: Tipo de produto
       - name: cenario
-        description: Cenário econômico
       - name: trimestre
-        description: Trimestre de referência
       - name: ano
-        description: Ano
       - name: preco
-        description: Preço
