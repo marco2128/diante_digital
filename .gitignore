@@ -1,11 +1,10 @@
-# Ignorar a pasta de dependências do Terraform
+# Ignorar diretório do Terraform
 .terraform/
 *.tfstate
 *.tfstate.backup
 
-# Ignorar arquivos de execução grandes
+# Ignorar arquivos binários e grandes
 *.exe
 *.zip
 *.tar.gz
 *.log
-
