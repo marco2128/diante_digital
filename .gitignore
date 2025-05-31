@@ -10,3 +10,9 @@ override.tf.json
 terraform.tfvars.json
 *.zip
 *.exe
+echo ".terraform/" >> .gitignore
+echo "*.exe" >> .gitignore
+echo "*.zip" >> .gitignore
+echo "*.tar.gz" >> .gitignore
+echo "*.log" >> .gitignore
+
