@@ -1,18 +1,11 @@
-# .gitignore
+# Ignorar a pasta de dependências do Terraform
 .terraform/
 *.tfstate
 *.tfstate.backup
-*.log
-crash.log
-*.tfvars
-override.tf
-override.tf.json
-terraform.tfvars.json
-*.zip
+
+# Ignorar arquivos de execução grandes
 *.exe
-echo ".terraform/" >> .gitignore
-echo "*.exe" >> .gitignore
-echo "*.zip" >> .gitignore
-echo "*.tar.gz" >> .gitignore
-echo "*.log" >> .gitignore
+*.zip
+*.tar.gz
+*.log
 
