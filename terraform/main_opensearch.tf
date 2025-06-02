@@ -41,7 +41,7 @@ resource "aws_opensearch_domain" "compliance" {
     enabled                        = true
     internal_user_database_enabled = false
     master_user_options {
-      master_user_arn = "arn:aws:iam::190440599924:user/marco001"
+      master_user_arn = "arn:aws:iam::1900000000:user/mammmmm"
     }
   }
 
@@ -52,7 +52,7 @@ resource "aws_opensearch_domain" "compliance" {
         Effect    = "Allow",
         Principal = { AWS = "*" },
         Action    = "es:*",
-        Resource  = "arn:aws:es:us-east-2:${data.aws_caller_identity.current.account_id}:domain/compliance-opensearch/*"
+        Resource  = "arn:aws:es:us-east-2:${data.aws_caller_identity.current.account_id}opensearch/*"
       }
     ]
   })
